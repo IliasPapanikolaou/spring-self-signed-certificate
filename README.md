@@ -53,3 +53,14 @@ If not specified, the KeyStore format defaults to JKS if we're using Java 8 or o
 ```bash
 keytool -importcert -alias mycert_public_cert -file mycert.cer -keystore testkeystoree -storetype PKCS12
 ```
+
+#### Export .cer
+List of keystore entries:
+```bash 
+keytool -list -v -keystore "testkeystore.p12" -storepass password
+```
+
+Export .cer of an entry based on alias name:
+```bash
+keytool -export -keystore testkeystore.p12 -alias testkeystore -file testkeystore.cer 
+```
